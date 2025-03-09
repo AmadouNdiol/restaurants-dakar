@@ -4,177 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Les 10 Meilleurs Restaurants de Dakar</title>
-    <style>
-        :root {
-            --primary-color: #00704A;
-            --secondary-color: #ffbb00;
-            --background-color: #f7f3e9;
-            --text-color: #333;
-            --card-color: #fff;
-            --accent-color: #e67e22;
-        }
-        
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-        }
-        
-        body {
-            background-color: var(--background-color);
-            color: var(--text-color);
-            line-height: 1.6;
-        }
-        
-        header {
-            background-color: var(--primary-color);
-            color: white;
-            text-align: center;
-            padding: 2rem 0;
-            margin-bottom: 2rem;
-            position: relative;
-            background-image: linear-gradient(rgba(0, 112, 74, 0.9), rgba(0, 112, 74, 0.9)), url('https://source.unsplash.com/1200x400/?dakar,senegal');
-            background-size: cover;
-            background-position: center;
-        }
-        
-        .header-content {
-            max-width: 800px;
-            margin: 0 auto;
-            padding: 0 20px;
-        }
-        
-        h1 {
-            font-size: 2.5rem;
-            margin-bottom: 1rem;
-            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
-        }
-        
-        .subtitle {
-            font-size: 1.2rem;
-            margin-bottom: 2rem;
-            font-weight: 300;
-        }
-        
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 20px;
-        }
-        
-        .restaurant-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
-            gap: 2rem;
-            margin-bottom: 3rem;
-        }
-        
-        .restaurant-card {
-            background-color: var(--card-color);
-            border-radius: 8px;
-            overflow: hidden;
-            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-        }
-        
-        .restaurant-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
-        }
-        
-        .restaurant-image {
-            height: 200px;
-            background-size: cover;
-            background-position: center;
-            position: relative;
-        }
-        
-        .rank {
-            position: absolute;
-            top: 10px;
-            left: 10px;
-            background-color: var(--secondary-color);
-            color: var(--text-color);
-            font-weight: bold;
-            padding: 5px 12px;
-            border-radius: 20px;
-            font-size: 1.1rem;
-        }
-        
-        .restaurant-details {
-            padding: 1.5rem;
-        }
-        
-        .restaurant-name {
-            font-size: 1.5rem;
-            margin-bottom: 0.7rem;
-            color: var(--primary-color);
-        }
-        
-        .restaurant-comment {
-            margin-bottom: 1rem;
-            font-style: italic;
-            color: #555;
-        }
-        
-        .restaurant-features {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 0.5rem;
-            margin-top: 1rem;
-        }
-        
-        .feature {
-            background-color: #f0f0f0;
-            padding: 0.3rem 0.8rem;
-            border-radius: 20px;
-            font-size: 0.8rem;
-            color: #666;
-        }
-        
-        footer {
-            background-color: var(--primary-color);
-            color: white;
-            text-align: center;
-            padding: 2rem 0;
-            margin-top: 2rem;
-        }
-        
-        .footer-content {
-            max-width: 600px;
-            margin: 0 auto;
-        }
-        
-        .location-dot {
-            display: inline-flex;
-            align-items: center;
-            margin-bottom: 0.5rem;
-            color: var(--accent-color);
-        }
-        
-        .location-dot svg {
-            margin-right: 0.5rem;
-        }
-        
-        @media (max-width: 768px) {
-            .restaurant-grid {
-                grid-template-columns: 1fr;
-            }
-            
-            h1 {
-                font-size: 2rem;
-            }
-            
-            .subtitle {
-                font-size: 1rem;
-            }
-            
-            .restaurant-card {
-                max-width: 100%;
-            }
-        }
-    </style>
+    <link rel="stylesheet" href="css/styles.css">
+    <meta name="description" content="Découvrez les 10 meilleurs restaurants de Dakar, avec commentaires authentiques et spécialités culinaires.">
 </head>
 <body>
     <header>
@@ -185,6 +16,18 @@
     </header>
     
     <div class="container">
+        <!-- Section de filtrage -->
+        <div class="filter-container">
+            <button class="filter-button active" data-filter="all">Tous les restaurants</button>
+            <button class="filter-button" data-filter="viande">Viande</button>
+            <button class="filter-button" data-filter="mer">Fruits de mer</button>
+            <button class="filter-button" data-filter="français">Cuisine française</button>
+            <button class="filter-button" data-filter="sénégalais">Cuisine sénégalaise</button>
+        </div>
+        
+        <!-- Carte des restaurants -->
+        <div id="map-container"></div>
+        
         <div class="restaurant-grid">
             <!-- Restaurant 1 -->
             <div class="restaurant-card">
@@ -357,7 +200,7 @@
                     <div class="restaurant-features">
                         <span class="feature">Crêpes et galettes</span>
                         <span class="feature">Pieds dans le sable</span>
-                        <span class="feature">Prix abordables</span>
+                        <span class="feature">Vue sur mer</span>
                     </div>
                 </div>
             </div>
@@ -414,5 +257,11 @@
             <p>Bon appétit à Dakar !</p>
         </div>
     </footer>
+
+    <!-- Script pour Google Maps -->
+    <script src="https://maps.googleapis.com/maps/api/js?key=YOUR_API_KEY&callback=restaurantApp.initMap" async defer></script>
+    
+    <!-- Script principal -->
+    <script src="js/main.js"></script>
 </body>
 </html>
