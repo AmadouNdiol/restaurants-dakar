@@ -1,0 +1,418 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Les 10 Meilleurs Restaurants de Dakar</title>
+    <style>
+        :root {
+            --primary-color: #00704A;
+            --secondary-color: #ffbb00;
+            --background-color: #f7f3e9;
+            --text-color: #333;
+            --card-color: #fff;
+            --accent-color: #e67e22;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        body {
+            background-color: var(--background-color);
+            color: var(--text-color);
+            line-height: 1.6;
+        }
+        
+        header {
+            background-color: var(--primary-color);
+            color: white;
+            text-align: center;
+            padding: 2rem 0;
+            margin-bottom: 2rem;
+            position: relative;
+            background-image: linear-gradient(rgba(0, 112, 74, 0.9), rgba(0, 112, 74, 0.9)), url('https://source.unsplash.com/1200x400/?dakar,senegal');
+            background-size: cover;
+            background-position: center;
+        }
+        
+        .header-content {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        h1 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+        }
+        
+        .subtitle {
+            font-size: 1.2rem;
+            margin-bottom: 2rem;
+            font-weight: 300;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        .restaurant-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+            gap: 2rem;
+            margin-bottom: 3rem;
+        }
+        
+        .restaurant-card {
+            background-color: var(--card-color);
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        
+        .restaurant-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+        }
+        
+        .restaurant-image {
+            height: 200px;
+            background-size: cover;
+            background-position: center;
+            position: relative;
+        }
+        
+        .rank {
+            position: absolute;
+            top: 10px;
+            left: 10px;
+            background-color: var(--secondary-color);
+            color: var(--text-color);
+            font-weight: bold;
+            padding: 5px 12px;
+            border-radius: 20px;
+            font-size: 1.1rem;
+        }
+        
+        .restaurant-details {
+            padding: 1.5rem;
+        }
+        
+        .restaurant-name {
+            font-size: 1.5rem;
+            margin-bottom: 0.7rem;
+            color: var(--primary-color);
+        }
+        
+        .restaurant-comment {
+            margin-bottom: 1rem;
+            font-style: italic;
+            color: #555;
+        }
+        
+        .restaurant-features {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+            margin-top: 1rem;
+        }
+        
+        .feature {
+            background-color: #f0f0f0;
+            padding: 0.3rem 0.8rem;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            color: #666;
+        }
+        
+        footer {
+            background-color: var(--primary-color);
+            color: white;
+            text-align: center;
+            padding: 2rem 0;
+            margin-top: 2rem;
+        }
+        
+        .footer-content {
+            max-width: 600px;
+            margin: 0 auto;
+        }
+        
+        .location-dot {
+            display: inline-flex;
+            align-items: center;
+            margin-bottom: 0.5rem;
+            color: var(--accent-color);
+        }
+        
+        .location-dot svg {
+            margin-right: 0.5rem;
+        }
+        
+        @media (max-width: 768px) {
+            .restaurant-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            h1 {
+                font-size: 2rem;
+            }
+            
+            .subtitle {
+                font-size: 1rem;
+            }
+            
+            .restaurant-card {
+                max-width: 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="header-content">
+            <h1>Les 10 Meilleurs Restaurants de Dakar</h1>
+            <p class="subtitle">Découvrez les établissements les mieux notés de la capitale sénégalaise selon les avis de visiteurs.</p>
+        </div>
+    </header>
+    
+    <div class="container">
+        <div class="restaurant-grid">
+            <!-- Restaurant 1 -->
+            <div class="restaurant-card">
+                <div class="restaurant-image" style="background-image: url('https://source.unsplash.com/400x200/?restaurant,steak')">
+                    <div class="rank">1</div>
+                </div>
+                <div class="restaurant-details">
+                    <h2 class="restaurant-name">La Parrilla</h2>
+                    <div class="location-dot">
+                        <svg width="16" height="16" fill="currentColor" viewBox="0 0 16 16">
+                            <path d="M8 0a5 5 0 0 0-5 5c0 5 5 11 5 11s5-6 5-11a5 5 0 0 0-5-5zm0 8a3 3 0 1 1 0-6 3 3 0 0 1 0 6z"/>
+                        </svg>
+                        Centre-ville, près du Palais Présidentiel
+                    </div>
+                    <p class="restaurant-comment">"Si vous aimez la viande de boeuf et que vous êtes de passage à Dakar, il faut aller à ce restaurant. L'une des meilleures adresses de Dakar, de la bonne viande d'argentine et des portions de taille!"</p>
+                    <div class="restaurant-features">
+                        <span class="feature">Viande argentine</span>
+                        <span class="feature">Grillades au feu de bois</span>
+                        <span class="feature">Décor élégant</span>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Restaurant 2 -->
+            <div class="restaurant-card">
+                <div class="restaurant-image" style="background-image: url('https://source.unsplash.com/400x200/?restaurant,african')">
+                    <div class="rank">2</div>
+                </div>
+                <div class="restaurant-details">
+                    <h2 class="restaurant-name">La Calebasse</h2>
+                    <div class="location-dot">
+                        <svg width="16" height="16" fill="currentColor" viewBox="0 0 16 16">
+                            <path d="M8 0a5 5 0 0 0-5 5c0 5 5 11 5 11s5-6 5-11a5 5 0 0 0-5-5zm0 8a3 3 0 1 1 0-6 3 3 0 0 1 0 6z"/>
+                        </svg>
+                        Les Almadies, Route des Mamelles
+                    </div>
+                    <p class="restaurant-comment">"Actuellement un des plus beaux restaurants de Dakar. Un cadre génial. La nourriture est pas mal non plus."</p>
+                    <div class="restaurant-features">
+                        <span class="feature">Cuisine sénégalaise</span>
+                        <span class="feature">Cadre élégant</span>
+                        <span class="feature">Vue panoramique</span>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Restaurant 3 -->
+            <div class="restaurant-card">
+                <div class="restaurant-image" style="background-image: url('https://source.unsplash.com/400x200/?restaurant,burger')">
+                    <div class="rank">3</div>
+                </div>
+                <div class="restaurant-details">
+                    <h2 class="restaurant-name">Chez Lulu</h2>
+                    <div class="location-dot">
+                        <svg width="16" height="16" fill="currentColor" viewBox="0 0 16 16">
+                            <path d="M8 0a5 5 0 0 0-5 5c0 5 5 11 5 11s5-6 5-11a5 5 0 0 0-5-5zm0 8a3 3 0 1 1 0-6 3 3 0 0 1 0 6z"/>
+                        </svg>
+                        Fann Résidence, Corniche Ouest
+                    </div>
+                    <p class="restaurant-comment">"There is always a delight in this restaurant and a free and warm atmosphere. Your visit will always be appreciated by the staff who are always attentive and courteous."</p>
+                    <div class="restaurant-features">
+                        <span class="feature">Concept store belge</span>
+                        <span class="feature">Meilleur burger de Dakar</span>
+                        <span class="feature">Vue sur mer</span>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Restaurant 4 -->
+            <div class="restaurant-card">
+                <div class="restaurant-image" style="background-image: url('https://source.unsplash.com/400x200/?restaurant,french')">
+                    <div class="rank">4</div>
+                </div>
+                <div class="restaurant-details">
+                    <h2 class="restaurant-name">Le Kermel</h2>
+                    <div class="location-dot">
+                        <svg width="16" height="16" fill="currentColor" viewBox="0 0 16 16">
+                            <path d="M8 0a5 5 0 0 0-5 5c0 5 5 11 5 11s5-6 5-11a5 5 0 0 0-5-5zm0 8a3 3 0 1 1 0-6 3 3 0 0 1 0 6z"/>
+                        </svg>
+                        Plateau, près du marché Kermel
+                    </div>
+                    <p class="restaurant-comment">"J'adore son ardoise menu, ses nappes à carreaux, son patron bonhomme et cette ambiance délicieusement surannée de bistrot à la française comme on les aime."</p>
+                    <div class="restaurant-features">
+                        <span class="feature">Cuisine française</span>
+                        <span class="feature">Formule déjeuner abordable</span>
+                        <span class="feature">Ambiance bistrot</span>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Restaurant 5 -->
+            <div class="restaurant-card">
+                <div class="restaurant-image" style="background-image: url('https://source.unsplash.com/400x200/?restaurant,seafood')">
+                    <div class="rank">5</div>
+                </div>
+                <div class="restaurant-details">
+                    <h2 class="restaurant-name">Chez Fatou Kim</h2>
+                    <div class="location-dot">
+                        <svg width="16" height="16" fill="currentColor" viewBox="0 0 16 16">
+                            <path d="M8 0a5 5 0 0 0-5 5c0 5 5 11 5 11s5-6 5-11a5 5 0 0 0-5-5zm0 8a3 3 0 1 1 0-6 3 3 0 0 1 0 6z"/>
+                        </svg>
+                        Les Almadies, plage
+                    </div>
+                    <p class="restaurant-comment">"Restaurant avec vue sur la mer, les pieds dans l'eau. Tous nos repas étaient bien préparés et servis par un personnel compétent et amical."</p>
+                    <div class="restaurant-features">
+                        <span class="feature">Fruits de mer</span>
+                        <span class="feature">Poisson frais</span>
+                        <span class="feature">Vue sur mer</span>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Restaurant 6 -->
+            <div class="restaurant-card">
+                <div class="restaurant-image" style="background-image: url('https://source.unsplash.com/400x200/?restaurant,casual')">
+                    <div class="rank">6</div>
+                </div>
+                <div class="restaurant-details">
+                    <h2 class="restaurant-name">Caesar's République</h2>
+                    <div class="location-dot">
+                        <svg width="16" height="16" fill="currentColor" viewBox="0 0 16 16">
+                            <path d="M8 0a5 5 0 0 0-5 5c0 5 5 11 5 11s5-6 5-11a5 5 0 0 0-5-5zm0 8a3 3 0 1 1 0-6 3 3 0 0 1 0 6z"/>
+                        </svg>
+                        Centre-ville, face au Café de Rome
+                    </div>
+                    <p class="restaurant-comment">"Les plats sont succulents et l'ambiance est au rendez-vous. Nice atmosphere, indoor and outdoor seating and good and fast service."</p>
+                    <div class="restaurant-features">
+                        <span class="feature">Cuisine internationale</span>
+                        <span class="feature">Service rapide</span>
+                        <span class="feature">Propre et abordable</span>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Restaurant 7 -->
+            <div class="restaurant-card">
+                <div class="restaurant-image" style="background-image: url('https://source.unsplash.com/400x200/?restaurant,local')">
+                    <div class="rank">7</div>
+                </div>
+                <div class="restaurant-details">
+                    <h2 class="restaurant-name">Le Mboté</h2>
+                    <div class="location-dot">
+                        <svg width="16" height="16" fill="currentColor" viewBox="0 0 16 16">
+                            <path d="M8 0a5 5 0 0 0-5 5c0 5 5 11 5 11s5-6 5-11a5 5 0 0 0-5-5zm0 8a3 3 0 1 1 0-6 3 3 0 0 1 0 6z"/>
+                        </svg>
+                        Médina, Rue 6x11
+                    </div>
+                    <p class="restaurant-comment">"Really good local restaurant. The place is clean and hygienic despite being in an old flat. A fantastic spot offering delicious cuisine."</p>
+                    <div class="restaurant-features">
+                        <span class="feature">Dibiterie</span>
+                        <span class="feature">Viande grillée</span>
+                        <span class="feature">Cuisine locale</span>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Restaurant 8 -->
+            <div class="restaurant-card">
+                <div class="restaurant-image" style="background-image: url('https://source.unsplash.com/400x200/?restaurant,beach')">
+                    <div class="rank">8</div>
+                </div>
+                <div class="restaurant-details">
+                    <h2 class="restaurant-name">Noflaye Beach</h2>
+                    <div class="location-dot">
+                        <svg width="16" height="16" fill="currentColor" viewBox="0 0 16 16">
+                            <path d="M8 0a5 5 0 0 0-5 5c0 5 5 11 5 11s5-6 5-11a5 5 0 0 0-5-5zm0 8a3 3 0 1 1 0-6 3 3 0 0 1 0 6z"/>
+                        </svg>
+                        Route des Almadies
+                    </div>
+                    <p class="restaurant-comment">"Bel endroit simple mais avec vue sur l'océan. Take the laid back feel of a surf shack and upgrade the décor to something Pinterest-worthy."</p>
+                    <div class="restaurant-features">
+                        <span class="feature">Crêpes et galettes</span>
+                        <span class="feature">Pieds dans le sable</span>
+                        <span class="feature">Prix abordables</span>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Restaurant 9 -->
+            <div class="restaurant-card">
+                <div class="restaurant-image" style="background-image: url('https://source.unsplash.com/400x200/?restaurant,cafe')">
+                    <div class="rank">9</div>
+                </div>
+                <div class="restaurant-details">
+                    <h2 class="restaurant-name">Mood Café</h2>
+                    <div class="location-dot">
+                        <svg width="16" height="16" fill="currentColor" viewBox="0 0 16 16">
+                            <path d="M8 0a5 5 0 0 0-5 5c0 5 5 11 5 11s5-6 5-11a5 5 0 0 0-5-5zm0 8a3 3 0 1 1 0-6 3 3 0 0 1 0 6z"/>
+                        </svg>
+                        4 Boulevard El Hadji Mbaye
+                    </div>
+                    <p class="restaurant-comment">"Un super brunch à prix abordable et en prime une superbe vue sur la mer. Le seul petit hic c'est que les formules ne comprennent pas de chocolat chaud."</p>
+                    <div class="restaurant-features">
+                        <span class="feature">Brunch</span>
+                        <span class="feature">Bistronomie</span>
+                        <span class="feature">Vue sur mer</span>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Restaurant 10 -->
+            <div class="restaurant-card">
+                <div class="restaurant-image" style="background-image: url('https://source.unsplash.com/400x200/?restaurant,sushi')">
+                    <div class="rank">10</div>
+                </div>
+                <div class="restaurant-details">
+                    <h2 class="restaurant-name">Matcha Café</h2>
+                    <div class="location-dot">
+                        <svg width="16" height="16" fill="currentColor" viewBox="0 0 16 16">
+                            <path d="M8 0a5 5 0 0 0-5 5c0 5 5 11 5 11s5-6 5-11a5 5 0 0 0-5-5zm0 8a3 3 0 1 1 0-6 3 3 0 0 1 0 6z"/>
+                        </svg>
+                        Point E
+                    </div>
+                    <p class="restaurant-comment">"Great choice of matcha drinks and desserts. Good delivery service. The sushi we ordered was the best we tasted in Dakar."</p>
+                    <div class="restaurant-features">
+                        <span class="feature">Matcha</span>
+                        <span class="feature">Sushi</span>
+                        <span class="feature">Desserts</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <footer>
+        <div class="footer-content">
+            <p>Ces restaurants ont été sélectionnés selon les avis Google et les commentaires de voyageurs en 2025.</p>
+            <p>Bon appétit à Dakar !</p>
+        </div>
+    </footer>
+</body>
+</html>
